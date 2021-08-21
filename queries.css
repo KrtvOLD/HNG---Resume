@@ -99,6 +99,10 @@
   .download-btn {
     align-self: center;
   }
+  
+  .logos {
+    align-self: center;
+  }
 }
 
 @media (max-width: 660px) {

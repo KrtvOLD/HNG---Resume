@@ -1,223 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap");
+
 :root {
-  --dark-blue: rgb(18, 48, 104);
-  --contact-texts: white;
+  --dark-blue: #2c4873;
+  --light-blue: #5ba7d1;
 }
 
-* {
-  padding: 0;
+*,
+*:before,
+*:after {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 10px;
-  overflow-x: hidden;
-}
-
-ul {
-  list-style-type: square;
-  padding-left: 30px;
 }
 
 a {
   text-decoration: none;
+  color: red;
 }
 
-img {
-  width: 30px;
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 10px;
 }
 
-.main-content {
+.main {
   display: flex;
-  width: 100vw;
-  height: 100%;
+  justify-content: space-between;
+  margin: 0 auto;
 }
 
 .main-left {
-  height: 100%;
-  flex-basis: 30%;
-  background: rgb(18, 48, 104);
-  padding: 50px 30px 50px;
-}
-
-#name {
-  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  background: var(--dark-blue);
   color: white;
-  line-height: 1;
-  padding-bottom: 30px;
-}
-#name span {
-  font-size: 3rem;
-  color: var(--dark-blue);
-  background: white;
-  display: inline-block;
-  letter-spacing: 6px;
-  margin-top: 3px;
+  padding: 80px 60px 20px 60px;
+  align-items: center;
+  height: 100%;
 }
 
-.profile-img {
-  position: relative;
-  width: 252.47px;
-  height: 252.47px;
-  margin-bottom: 20px;
-  background: url(./img/display\ picture.jpg);
+.main-left .profile-img {
+  background-image: url(./img/display\ picture.jpg);
   background-size: cover;
-  background-position-y: -25px;
-  border-radius: 0px 10px 10px 0;
-  border: 2px solid white;
-  border-left: 10px solid white;
+  background-position-y: -20px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
 }
 
-.contact {
-  margin-bottom: 20px;
+.small-name {
+  display: none;
 }
 
-.heading {
+.small-stack {
+  display: none;
+}
+
+.small-profile {
+  display: none;
+}
+
+.main-left .contact {
+  margin: 40px 0;
+  margin-bottom: 60px;
+}
+.main-left .contact p {
+  text-transform: uppercase;
+  letter-spacing: 3px;
   font-size: 1.5rem;
-  color: var(--dark-blue);
-  border-bottom: 2px solid var(--dark-blue);
-  margin-bottom: 5px;
-}
-
-.tag,
-#heading-hobbies {
-  display: inline-block;
-  font-size: 1rem;
-  color: var(--dark-blue);
-  background: white;
-  padding: 2px 3px 2px 2px;
-  margin-bottom: 3px;
-}
-
-.contact p {
-  font-size: 0.8rem;
-  position: relative;
-}
-
-#phone,
-#email {
-  font-size: 0.8rem;
   margin-bottom: 10px;
 }
-
-#address span,
-#phone span,
-#email span,
-#linkedin span {
-  color: var(--contact-texts);
-  letter-spacing: 1px;
-}
-
-#linkedin {
-  margin-bottom: 20px;
-}
-
-#linkedin a {
+.main-left .contact .contact-details {
+  padding-left: 20px;
   font-size: 0.8rem;
-  color: var(--contact-texts);
 }
-#linkedin a:hover {
-  color: var(--dark-blue);
-  background: white;
-  transition: all 500ms ease-in-out;
+.main-left .contact .contact-details i {
+  font-size: 1.2rem;
 }
-
-.hobbies ul li {
-  font-size: 0.8rem;
+.main-left .contact .contact-details span {
+  margin-left: 5px;
+}
+.email {
+  margin-bottom: 5px;
+}
+.email a {
   color: white;
-  letter-spacing: 1;
 }
 
-#heading-hobbies {
-  color: var(--dark-blue);
+.skill-heading {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+.skill:not(:last-child) {
+  margin-bottom: 15px;
+}
+.skill {
+  position: relative;
+  background: var(--light-blue);
+  width: 140px;
+  height: 117px;
+  padding: 20px 10px;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2), -2px -2px 10px rgba(0, 0, 0, 0.2);
+}
+.skill:hover {
+  transform: scale(1.1);
+  transition: 500ms all ease-in-out;
+}
+.skill i {
+  font-size: 3rem;
+}
+.skill .skill-name {
+  margin-top: 10px;
+}
+.skill:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10px;
+  background: transparent;
+  border: 0.5px solid white;
+  border-radius: 0px 0px 10px 10px;
+  z-index: 100;
+}
+.html:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 90%;
+  height: 10px;
   background: white;
-  display: inline-block;
+  border-radius: 0px 0px 0px 10px;
+}
+.css:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80%;
+  height: 10px;
+  background: white;
+  border-radius: 0px 0px 0px 10px;
+}
+.bootstrap:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 10px;
+  background: white;
+  border-radius: 0px 0px 0px 10px;
+}
+.javascript:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 10px;
+  background: white;
+  border-radius: 0px 0px 0px 10px;
+}
+.github:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 10px;
+  background: white;
+  border-radius: 0px 0px 0px 10px;
 }
 
 .main-right {
-  padding: 50px 30px 50px;
-  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+  padding: 80px 50px;
 }
 
-.about {
+.name {
+  font-family: "roboto", sans-serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  color: var(--dark-blue);
+  position: relative;
   margin-bottom: 20px;
 }
-.about p {
-  width: 75%;
-  font-size: 0.9rem;
-  line-height: 1.3;
+.name:after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 3px;
+  background: var(--dark-blue);
+  left: 0;
+  bottom: -10px;
+}
+.surname {
+  display: block;
+}
+.small-name {
+  color: white;
+  font-size: 3rem;
+  margin-top: 30px;
+}
+.small-name:after {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 3px;
+  background: var(--light-blue);
+  left: 0;
+  bottom: -10px;
 }
 
-.skills {
-  margin: 10px 0;
+.stack {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--light-blue);
+  margin-bottom: 85px;
+  margin-top: 10px;
 }
-.skills li {
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-}
-.skills li:not(:last-child) {
+
+.heading {
+  color: var(--light-blue);
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  letter-spacing: 3px;
   margin-bottom: 10px;
 }
 
-.skill-img {
-  width: 40px;
+.personal-profile {
+  margin-bottom: 40px;
+}
+.main-content {
+  font-size: 1.2rem;
 }
 
-.skill-img img {
-  width: 100%;
+.work-experience {
+  margin-bottom: 40px;
+}
+.work-experience p {
+  font-size: 1.3rem;
+  color: grey;
+  margin-bottom: 10px;
+}
+.work-experience ul {
+  padding-left: 40px;
 }
 
-.small-img {
-  width: 10px;
+.educational-history p {
+  font-size: 1.3rem;
+  color: grey;
+  margin-bottom: 10px;
+}
+.educational-history ul {
+  padding-left: 40px;
 }
 
-.xp {
-  margin-bottom: 20px;
-}
-
-.xp p,
-.education p {
-  font-size: 0.9rem;
-}
-
-.cv {
-  margin-top: 10px;
+.download-btn {
+  margin-top: 50px;
+  cursor: pointer;
   background: var(--dark-blue);
-  display: inline-block;
-  padding: 5px 8px;
+  padding: 20px 10px;
+  width: 210px;
+  border-radius: 10px;
   animation-name: scale;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;
+  animation-duration: 3s;
   animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
-.cv:hover {
-  background: rgb(33, 80, 167);
-  transition: 500ms ease-in-out;
+.download-btn:hover {
+  background: var(--light-blue);
+  transition: all 500ms ease-in-out;
+}
+.download-btn a {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.logos {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.HNG {
+  width: 80px;
+  height: 60px;
+  margin-right: 30px;
+}
+.HNG img {
+  width: 100%;
+  height: 100%;
+}
+.zuri {
+  width: 90px;
+}
+.zuri img {
+  width: 100%;
 }
 
 @keyframes scale {
   0% {
     transform: scale(1);
   }
-
   50% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
-
   100% {
     transform: scale(1);
-  }
-}
-
-.cv a {
-  color: white;
-  font-size: 1.5rem;
-}
-
-@media (max-width: 600px) {
-  .main-content {
-    flex-direction: column;
   }
 }
